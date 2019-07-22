@@ -21,7 +21,8 @@ namespace App446MasterDetail.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
+                new HomeMenuItem {Id = MenuItemType.About, Title="About" },
+                new HomeMenuItem {Id = MenuItemType.Driver, Title="Driver"}
             };
 
             ListViewMenu.ItemsSource = menuItems;

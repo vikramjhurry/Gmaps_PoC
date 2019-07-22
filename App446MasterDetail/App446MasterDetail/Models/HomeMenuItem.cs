@@ -7,7 +7,8 @@ namespace App446MasterDetail.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        Driver
     }
     public class HomeMenuItem
     {
