@@ -143,4 +143,10 @@
       <Name>App446MasterDetail</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Update_30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ELCA_A_rgb_positive_72dpi.png" />
+  </ItemGroup>
 </Project>

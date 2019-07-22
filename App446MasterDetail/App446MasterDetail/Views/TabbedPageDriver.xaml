@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:ms="clr-namespace:Xamarin.Forms.MultiSelectListView;assembly=Xamarin.Forms.MultiSelectListView"
              mc:Ignorable="d"
              x:Class="App446MasterDetail.Views.TabbedPageDriver">
     
@@ -13,9 +14,12 @@
             <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
         </ContentPage.ToolbarItems>
 
-
+        <ScrollView Orientation="Vertical">
         <StackLayout>
+
+           
             <ListView x:Name="ItemsListView"
+                      
                 ItemsSource="{Binding Items}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
@@ -23,7 +27,8 @@
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
-                ItemSelected="OnItemSelected">
+                ItemSelected="OnItemSelected"
+                      ms:MultiSelect.Enable="True">
                 <d:ListView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>First Item</x:String>
@@ -34,27 +39,51 @@
                         <x:String>Sixth Item</x:String>
                     </x:Array>
                 </d:ListView.ItemsSource>
+                
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="10">
-                                <Label Text="{Binding Id}" 
+                            <ms:SelectableCell x:Name="SelectableCell">
+
+                                <ms:SelectableCell.CheckView>
+                                    <Image Source="Update_30.png"  WidthRequest="30" HeightRequest="30"></Image>
+                                </ms:SelectableCell.CheckView>
+
+                                <ms:SelectableCell.DataView>
+                                    <StackLayout Padding="10,10,10,0">
+                                        <Label Text="{Binding Vehicle}" 
                                 d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                                <Label Text="{Binding Description}" 
+                                        <Label Text="{Binding DestinationLocation}" 
+                                d:Text="Item descripton"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                    </StackLayout>
+                                </ms:SelectableCell.DataView>
+
+                            </ms:SelectableCell>
+
+                            <!--ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Vehicle}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                                <Label Text="{Binding DestinationLocation}" 
                                 d:Text="Item descripton"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
                             </StackLayout>
-                        </ViewCell>
+                        </-->
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-
+        </ScrollView>
     </ContentPage>
     <ContentPage Title="Tab 2" />
   <ContentPage Title="Tab 3" />

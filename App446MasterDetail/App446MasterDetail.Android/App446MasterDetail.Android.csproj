@@ -131,5 +131,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ELCA_A_rgb_positive_72dpi.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Update_30.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

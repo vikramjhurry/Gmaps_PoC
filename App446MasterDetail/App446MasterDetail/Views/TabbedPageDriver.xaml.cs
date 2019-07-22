@@ -17,12 +17,12 @@ namespace App446MasterDetail.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TabbedPageDriver : TabbedPage
     {
-        ItemsViewModel viewModel;
+        TransportItemsViewModel viewModel;
 
         public TabbedPageDriver()
         {
             InitializeComponent();
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = viewModel = new TransportItemsViewModel();
         }
 
        
