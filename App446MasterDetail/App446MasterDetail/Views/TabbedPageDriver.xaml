@@ -49,7 +49,7 @@
                                 </ms:SelectableCell.CheckView>
 
                                 <ms:SelectableCell.DataView>
-                                    <StackLayout Padding="10,10,10,0">
+                                    <StackLayout Orientation="Horizontal" Padding="15,15,15,15">
                                         <Label Text="{Binding Vehicle}" 
                                 d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 
